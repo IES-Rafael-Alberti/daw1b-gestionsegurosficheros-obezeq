@@ -6,24 +6,29 @@ abstract class Seguro (
     protected val importe: Double
 ) : IExportable {
 
-    abstract fun calcularImporteAnioSiguiente(interes: Double): Double
+    protected fun getDniTitular() : String {
+        return dniTitular
+    }
 
+    abstract fun calcularImporteAnioSiguiente(interes: Double): Double
     abstract fun tipoSeguro(): String
 
     override fun serializar(separador: String): String {
-        return "${numPoliza};${dniTitular};${importe}"
+        return "$numPoliza$separador$dniTitular$separador${"%.2f".format(importe)}"
     }
 
     override fun toString(): String {
-        return "Seguro(numPoliza=${numPoliza}, dniTitular=${dniTitular}, importe=${importe})"
+        return "Seguro(numPoliza=${numPoliza}, dniTitular=${dniTitular}, importe=${"%.2f".format(importe)})"
     }
 
     override fun hashCode(): Int {
-        return super.hashCode()
+        return numPoliza.hashCode()
     }
 
     override fun equals(other: Any?): Boolean {
-        return super.equals(other)
+        if (this === other) return true
+        if (other !is Seguro) return false
+        return this.numPoliza == other.numPoliza
     }
 
 }

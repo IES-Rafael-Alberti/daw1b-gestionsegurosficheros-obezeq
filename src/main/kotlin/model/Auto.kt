@@ -1,13 +1,11 @@
 package org.example.model
 
 enum class Auto {
-    BAJO,
-    MEDIO,
-    ALTO;
+    COCHE,
+    MOTO,
+    CAMION;
 
     companion object {
-        fun getRiesgo(valor: String) : Auto {
-
-        }
+        fun getAuto(valor: String) : Auto = entries.find { it.name.equals(valor, ignoreCase = true) } ?: COCHE
     }
 }

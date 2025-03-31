@@ -66,10 +66,6 @@ class SeguroHogar : Seguro {
         return importe * (1 + interes + (ciclos * PORCENTAJE_INCREMENTO_ANIOS))
     }
 
-    override fun tipoSeguro(): String {
-        return this::class.simpleName ?: "Desconocido"
-    }
-
     override fun serializar(separador: String): String {
         return super.serializar(separador) +
                 "$separador$metrosCuadrados$separador$valorContenido$separador$direccion$separador$anioConstruccion"

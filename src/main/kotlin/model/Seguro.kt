@@ -11,7 +11,10 @@ abstract class Seguro (
     }
 
     abstract fun calcularImporteAnioSiguiente(interes: Double): Double
-    abstract fun tipoSeguro(): String
+
+    fun tipoSeguro(): String {
+        return this::class.simpleName ?: "Desconocido"
+    }
 
     override fun serializar(separador: String): String {
         return "$numPoliza$separador$dniTitular$separador${"%.2f".format(importe)}"

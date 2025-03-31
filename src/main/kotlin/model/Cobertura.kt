@@ -10,8 +10,6 @@ enum class Cobertura {
     TODO_RIESGO;
 
     companion object {
-        fun getCobertura(valor: String) : Cobertura {
-
-        }
+        fun getCobertura(valor: String) : Cobertura = entries.find { it.name.equals(valor, ignoreCase = true) } ?: TERCEROS
     }
 }

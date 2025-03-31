@@ -6,8 +6,6 @@ enum class Perfil {
     CONSULTA;
 
     companion object {
-        fun getPefil(valor: String) : Perfil {
-
-        }
+        fun getPerfil(valor: String) : Perfil = entries.find { it.name.equals(valor, ignoreCase = true) } ?: CONSULTA
     }
 }

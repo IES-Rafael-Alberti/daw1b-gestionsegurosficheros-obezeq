@@ -6,6 +6,13 @@ enum class Auto {
     CAMION;
 
     companion object {
-        fun getAuto(valor: String) : Auto = entries.find { it.name.equals(valor, ignoreCase = true) } ?: COCHE
+        fun getAuto(valor: String): Auto {
+            for (auto in entries) {
+                if (auto.name.equals(valor, ignoreCase = true)) {
+                    return auto
+                }
+            }
+            return COCHE
+        }
     }
 }

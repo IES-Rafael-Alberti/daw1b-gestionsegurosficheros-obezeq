@@ -13,10 +13,9 @@ class SeguroVida private constructor(
 ) : Seguro(numPoliza, dniTitular, importe) {
 
     companion object {
-        private var numPolizasVida = 800000
+        var numPolizasVida = 800000
 
         fun crearSeguro(datos: List<String>): SeguroVida? {
-            if (datos.size != 8) return null
             return try {
                 val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
                 SeguroVida(

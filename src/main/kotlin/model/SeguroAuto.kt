@@ -13,7 +13,7 @@ class SeguroAuto private constructor(
 ) : Seguro(numPoliza, dniTitular, importe) {
 
     companion object {
-        private var numPolizasAuto = 400000
+        var numPolizasAuto = 400000
         private const val PORCENTAJE_INCREMENTO_PARTES = 2
 
         fun crearSeguro(datos: List<String>): SeguroAuto? {

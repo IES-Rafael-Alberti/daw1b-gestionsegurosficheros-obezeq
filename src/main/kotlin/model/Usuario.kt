@@ -20,6 +20,10 @@ class Usuario (
         }
     }
 
+    fun getUsuarioClave() : String {
+        return clave
+    }
+
     fun cambiarClave(nuevaClaveEncriptada: String) {
 
         // Actualizo la clave del usuario directamente

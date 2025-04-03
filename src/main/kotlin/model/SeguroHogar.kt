@@ -34,7 +34,7 @@ class SeguroHogar : Seguro {
     constructor(
         dniTitular: String,
         importe: Double,
-        metrosCuadrados: Double,
+        metrosCuadrados: Int,
         valorContenido: Double,
         direccion: String,
         anioConstruccion: Int

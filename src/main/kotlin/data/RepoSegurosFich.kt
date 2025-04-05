@@ -5,6 +5,7 @@ import org.example.model.SeguroAuto
 import org.example.model.SeguroHogar
 import org.example.model.SeguroVida
 import org.example.utils.IUtilFicheros
+import kotlin.reflect.KFunction1
 
 class RepoSegurosFich(
     private val rutaArchivo: String,
@@ -24,7 +25,7 @@ class RepoSegurosFich(
         } else false
     }
 
-    override fun cargarSeguros(mapa: Map<String, (List<String>) -> Seguro>): Boolean {
+    override fun cargarSeguros(mapa: Map<String, KFunction1<List<String>, Seguro?>>): Boolean {
         try {
             val lineas = fich.leerArchivo(rutaArchivo)
             if (lineas.isEmpty()) return false

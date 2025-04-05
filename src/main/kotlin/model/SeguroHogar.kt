@@ -39,7 +39,7 @@ class SeguroHogar : Seguro {
         direccion: String,
         anioConstruccion: Int
     ) : super(numPolizasHogar++, dniTitular, importe) {
-        this.metrosCuadrados = metrosCuadrados
+        this.metrosCuadrados = metrosCuadrados.toDouble()
         this.valorContenido = valorContenido
         this.direccion = direccion
         this.anioConstruccion = anioConstruccion

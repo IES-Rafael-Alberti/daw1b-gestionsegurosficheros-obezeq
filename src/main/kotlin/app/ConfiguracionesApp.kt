@@ -4,6 +4,7 @@ import org.example.model.Seguro
 import org.example.model.SeguroAuto
 import org.example.model.SeguroHogar
 import org.example.model.SeguroVida
+import kotlin.reflect.KFunction1
 
 /**
  * Objeto de configuración global que centraliza elementos reutilizables del sistema.
@@ -25,7 +26,7 @@ object ConfiguracionesApp {
      * Las claves del mapa deben coincidir con el nombre que aparece al final de cada línea
      * serializada en el fichero (por ejemplo: "SeguroAuto").
      */
-    val mapaCrearSeguros: Map<String, (List<String>) -> Seguro> = mapOf(
+    val mapaCrearSeguros: Map<String, KFunction1<List<String>, Seguro?>> = mapOf(
         "SeguroHogar" to SeguroHogar::crearSeguro,
         "SeguroAuto" to SeguroAuto::crearSeguro,
         "SeguroVida" to SeguroVida::crearSeguro
